@@ -3,47 +3,52 @@
 <form>
     <fieldset>
         <legend>persoonlijke gegevens</legend>
-        <label for="Voornaam">
-<!--            Voornaam-->
+        <label for="Voornaam" class="form-label">
+            Voornaam*
             <input id="Voornaam"  type="text" required
-                   placeholder="Voornaam"
+
                     />
         </label>
-        <label for="Tussenvoegsel">
-<!--            Tussenvoegsel-->
-            <input id="Tussenvoegsel" placeholder="Tussenvoegsel"  type="text"/>
+        <label for="Tussenvoegsel" class="form-label">
+            Tussenvoegsel
+            <input id="Tussenvoegsel" type="text"/>
         </label>
-        <label for="Achternaam">
-<!--            Achternaam-->
-            <input id="Achternaam"  placeholder="Achternaam"  type="text"/>
+        <label for="Achternaam" class="form-label">
+            Achternaam*
+            <input id="Achternaam"  type="text"/>
         </label>
-        <label for="functie">
-<!--            Functie-->
-            <input id="functie" placeholder="Functie" type="text"/>
+        <label for="functie" class="form-label">
+            Functie*
+            <input id="functie" type="text"/>
         </label>
-        <label for="email">
-<!--            E-mail-->
-            <input id="email" placeholder="E-mail" type="email"/>
+        <label for="email" class="form-label">
+            E-mail*
+            <input id="email" type="email"/>
         </label>
-        <label for="Mobiel">
-<!--            Mobiel-->
-            <input id="Mobiel" placeholder="Mobiel"  type="tel"/>
+        <label for="Mobiel" class="form-label">
+            Mobiel*
+            <input id="Mobiel"  type="tel"/>
         </label>
-        <label for="Bedrijfsnaam">
-<!--            Bedrijfsnaam-->
-            <input id="Bedrijfsnaam"  placeholder="Bedrijfsnaam"  type="text"/>
+        <label for="Bedrijfsnaam" class="form-label">
+            Bedrijfsnaam*
+            <input id="Bedrijfsnaam"  type="text"/>
         </label>
-        <label for="Bedrijfswebsite">
-<!--            Bedrijfswebsite-->
-            <input id="Bedrijfswebsite"  placeholder="Bedrijfswebsite"  type="text"/>
+        <label for="Bedrijfswebsite" class="form-label">
+            Bedrijfswebsite*
+            <input id="Bedrijfswebsite"    type="text"/>
         </label>
-        <label for="ik wil graag lid worden omdat">
-<!--            ik wil graag lid worden omdat-->
-            <input id="ik wil graag lid worden omdat"  placeholder="ik wil graag lid worden omdat"  type="text"/>
+        <label for="ik wil graag lid worden omdat" class="form-label ">
+            ik wil graag lid worden omdat*
+            <textarea>
+
+            </textarea>
         </label>
         <label for="FTE">
-            FTE
+            FTE*
             <select id="FTE" >
+                <option value="">
+
+                </option>
                 <option value="1-9">
                     1-9
                 </option>
@@ -71,6 +76,9 @@
 </form>
 
 <style>
+    form{
+        color: #666666;
+    }
     fieldset{
         border: none;
     }
@@ -79,10 +87,12 @@
         top: 0;
         left: -9999px;
     }
-    input{
+    textarea{
+        height: auto;
+    }
+    input,textarea, select{
 
         border: none;
-        margin-bottom: 0.8rem;
     }
     label {
         margin-top: 1.8rem;
@@ -90,6 +100,51 @@
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        border-bottom: 1px solid black;
+        border-bottom: 1.5px solid black;
     }
+
+    @media (max-width: 700px) {
+            .form-label {
+                margin-top: 1.8rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                border-bottom: 1.5px solid black;
+            }
+        }
+
+    @media (min-width: 700px) {
+        fieldset {
+            display: grid;
+                    grid-template-columns: auto auto;
+                    /*background-color: red;*/
+            max-width: 700px;
+            column-gap: 1rem;
+        }
+    }
+
+    /*.form-label {*/
+    /*    container-name: main;*/
+    /*    container-type: inline-size;*/
+    /*}*/
+    /*@container main (max-width: 700px) {*/
+    /*    .form-label {*/
+    /*        margin-top: 1.8rem;*/
+    /*        display: flex;*/
+    /*        flex-direction: column;*/
+    /*        justify-content: center;*/
+    /*        width: 100%;*/
+    /*        border-bottom: 1.5px solid black;*/
+    /*    }*/
+    /*}*/
+
+    /*@container main (min-width: 700px) {*/
+    /*    .form-label {*/
+    /*       display: grid;*/
+    /*        grid-template-columns: auto auto;*/
+    /*        background-color: red;*/
+
+    /*    }*/
+    /*}*/
 </style>
